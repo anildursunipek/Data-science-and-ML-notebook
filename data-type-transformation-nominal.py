@@ -13,6 +13,7 @@ from sklearn import preprocessing
 labelEncoding = preprocessing.LabelEncoder()
 country[:,0] = labelEncoding.fit_transform(df.iloc[:,0]) # Nominal datas is converted to number // 0 or 1
 print(country)
+print(country.size)#Output = 22
 
 """
 Example-LabelEncoder
@@ -48,3 +49,12 @@ array([['Male', 1],
 >>> enc.get_feature_names_out(['gender', 'group'])
 array(['gender_Female', 'gender_Male', 'group_1', 'group_2', 'group_3'], ...)
 """
+
+# DataFrame Combination
+result = pd.DataFrame(data=country, index=range(22),columns=['fr','tr','us'],dtype=('int'))
+print(result)
+
+result2 = df.drop(columns=('country'))
+print(result2)
+concat = pd.concat([result,result2],axis=1)
+print(concat)
