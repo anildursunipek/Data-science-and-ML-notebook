@@ -16,7 +16,8 @@ print(country)
 print(country.size)#Output = 22
 
 """
-Example-LabelEncoder
+Label Encoder = Converts each nominal value to numeric value and returns values like 0,1,2,3,4...
+Example
 >>> le = preprocessing.LabelEncoder()
 >>> le.fit(["paris", "paris", "tokyo", "amsterdam"])
 LabelEncoder()
@@ -33,7 +34,8 @@ ohe = preprocessing.OneHotEncoder()
 country = ohe.fit_transform(country).toarray()
 print(country)
 """
-Example-OneHotEncoder
+OneHotEncoder = Moves labels to column headings. Writes 0 or 1 under each tag.
+Example
 >>> enc = OneHotEncoder(handle_unknown='ignore')
 >>> X = [['Male', 1], ['Female', 3], ['Female', 2]]
 >>> enc.fit(X)
